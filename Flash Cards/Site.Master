@@ -64,10 +64,16 @@
                             </ul>
                         </li>
                     </ul>
+                    <ul runat="server" id="welcomeList" visible="false">
+                        <li>
+                            <div>
+                                 Welcome, <asp:Label ID="lblUsername" runat="server"></asp:Label>!
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-
 
 
         <%--        <div class="navbar navbar-light navbar-fixed-top navbar-default">
@@ -96,12 +102,16 @@
             <h2 style="text-align: center;">Log in</h2>
 
             <div class="form-floating">
-                <input class="form-control" id="floatingInput" placeholder="Username" />
+                <asp:TextBox runat="server" class="form-control" id="userNameTxt" placeholder="Username"></asp:TextBox> 
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                <asp:TextBox runat="server" type="password" class="form-control" id="passwordTxt" placeholder="Password"></asp:TextBox> 
                 <label for="floatingPassword">Password</label>
+            </div>
+
+            <div>
+                <asp:Label ID="loginMsg" runat="server"></asp:Label>  
             </div>
 
             <div class="checkbox mb-3">
@@ -110,7 +120,7 @@
                     Remember me
                 </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary signin-button" type="submit">Sign in</button>
+            <asp:Button runat="server" class="w-100 btn btn-lg btn-primary signin-button" OnClick="LoginBtn_Click" Text="Sign in"></asp:Button>
         </main>
     </div>
 
