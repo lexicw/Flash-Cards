@@ -48,16 +48,6 @@ button {
         background-color: #000000;
     }
 
-.signin-button {
-    width: 100%;
-    margin: auto;
-    margin-bottom: 2px;
-    display: block;
-    background-color: #337ab7;
-}
-    .signin-button:hover, .signin-button:focus {
-        background-color: #245580;
-    }
 
 .flash-card-div {
     width: 250px;

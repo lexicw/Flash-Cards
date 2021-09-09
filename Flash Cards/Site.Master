@@ -39,7 +39,7 @@
         </asp:ScriptManager>
 
 
-
+        <div id="masterpage" runat="server">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" runat="server" href="~/">Flash Cards</a>
@@ -96,34 +96,7 @@
             </div>
         </div>--%>
 
-    <button class="btn open-button btn-dark btn-lg" onclick="return false;">Log in</button>
-    <div class="form-popup mb-5 form-hide" id="myForm">
-        <main class="form-signin">
-            <h2 style="text-align: center;">Log in</h2>
-
-            <div class="form-floating">
-                <asp:TextBox runat="server" class="form-control" id="userNameTxt" placeholder="Username"></asp:TextBox> 
-                <label for="floatingInput">Username</label>
-            </div>
-            <div class="form-floating">
-                <asp:TextBox runat="server" type="password" class="form-control" id="passwordTxt" placeholder="Password"></asp:TextBox> 
-                <label for="floatingPassword">Password</label>
-            </div>
-
-            <div>
-                <asp:Label ID="loginMsg" runat="server"></asp:Label>  
-            </div>
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me" />
-                    Remember me
-                </label>
-            </div>
-            <asp:Button runat="server" class="w-100 btn btn-lg btn-primary signin-button" OnClick="LoginBtn_Click" Text="Sign in"></asp:Button>
-        </main>
-    </div>
-
+  </div>
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -135,19 +108,7 @@
         </div>
 
     </form>
-
-    <script>
-        $(".open-button").click(function () {
-            $(".form-popup").toggleClass("form-hide");
-            if ($(".form-popup").hasClass("form-hide")) {
-                $(".open-button").html('Log in');
-            }
-            else {
-                $(".open-button").html('Close');
-            }
-        });
-    </script>
-
+    
 </body>
 </html>
 
