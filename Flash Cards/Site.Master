@@ -64,10 +64,10 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul runat="server" id="welcomeList" visible="false">
+                    <ul runat="server" id="welcomeList">
                         <li>
                             <div>
-                                 Welcome, <asp:Label ID="lblUsername" runat="server"></asp:Label>!
+                                 Welcome, <asp:Label ID="lblUsername" runat="server"><%=Application["UserName"].ToString() %></asp:Label>!
                             </div>
                         </li>
                     </ul>

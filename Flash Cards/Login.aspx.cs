@@ -40,6 +40,9 @@ namespace Flash_Cards
                     int userId = Convert.ToInt32(sdr["userId"]);
                     userName = sdr["userName"].ToString();
 
+                    Application["UserName"] = userName;
+                    Application["UserId"] = userId;
+
                     if (userId > 0)
                     {
                         //welcomeList.Visible = true;

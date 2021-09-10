@@ -13,6 +13,9 @@ namespace Flash_Cards
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Sets the username and password by default for testing purposes
+            Application["UserName"] = "Lexi";
+            Application["UserId"] = 1;
         }
 
     }
