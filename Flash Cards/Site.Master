@@ -76,6 +76,9 @@
         </nav>
 
 
+       <asp:Button runat="server" ID="logOutBtn" class="btn open-button btn-dark btn-lg" onclick="Logout_Click" Text="Log Out"></asp:Button>
+
+
         <%--        <div class="navbar navbar-light navbar-fixed-top navbar-default">
             <div class="container">
                 <div class="navbar-header">

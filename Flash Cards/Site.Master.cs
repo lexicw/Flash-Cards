@@ -18,5 +18,11 @@ namespace Flash_Cards
             Application["UserId"] = 1;
         }
 
+        public void Logout_Click(object sender, EventArgs e)
+        {
+            Application["UserId"] = 0;
+            Response.Redirect("/Login.aspx");
+        }
+
     }
 }

@@ -42,12 +42,14 @@ namespace Flash_Cards
 
                     Application["UserName"] = userName;
                     Application["UserId"] = userId;
+                    Response.Redirect("/Default.aspx");
 
                     if (userId > 0)
                     {
                         //welcomeList.Visible = true;
                         //lblUsername.Text = userName;
                     }
+
                 }
                 else
                 {
