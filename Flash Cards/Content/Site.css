@@ -22,7 +22,7 @@ button {
 }
 
 .card {
-    border: 1px solid #e3f2fd;
+    border: 1px solid #000;
     position: relative;
     margin-bottom: 40px;
 }
@@ -32,18 +32,38 @@ button {
     margin: auto;
     margin-bottom: 2px;
     display: block;
-    background-color: #337ab7;
+    background-color: #e3f2fd;
+    border: 2px solid #000;
+    color: #000;
+    transition: transform .2s;
 }
 
-    .fc-button:hover, .fc-button:focus {
-        background-color: #245580;
+    .fc-button:hover {
+        background-color: #e3e4e5 !important;
+        border: 2px solid #000;
+        color: #000 !important;
+        transform: scale(1.05);
     }
+
+.icon-buttons {
+    border: none;
+    background: none;
+    font-size: 25px;
+    display: inline;
+    transition: transform .2s;
+}
+
+    .icon-buttons:hover {
+        transform: scale(1.5);
+    }
+
 
 .delete-button {
     width: 100%;
     margin: auto;
     background-color: #363636;
 }
+
     .delete-button:hover {
         background-color: #000000;
     }
@@ -125,7 +145,6 @@ button {
     -webkit-transform: rotate(45deg);
 }
 
-/* Styles for main page login form */
 .form-signin {
     width: 95%;
     margin: auto;
@@ -143,17 +162,6 @@ button {
     z-index: 9;
 }
 
-.form-popup {
-    position: fixed;
-    bottom: 55px;
-    right: 30px;
-    z-index: 9;
-    width: 280px;
-    background-color: #e3e4e5;
-    border: 1px solid #337ab7;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-
 .form-hide {
     display: none;
 }
@@ -163,7 +171,6 @@ button {
     float: right;
     font-size: 16px;
 }
-/* End Styles for main page login form */
 
 
 /* Styles for Sticky Notes on home page */
@@ -224,3 +231,102 @@ ul.notes-ul li.notes-li {
 }
 
 /* End Styles Sticky Notes */
+
+
+
+
+.container-feed {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: #FFF;
+}
+
+    .container-feed .row > .col-card {
+        display: flex;
+        align-items: stretch;
+        margin-bottom: 1rem;
+    }
+
+.card {
+    border-radius: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .card > .card-front {
+        padding: 20px;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+        .card > .card-front > div {
+            align-items: stretch;
+            flex-basis: auto;
+        }
+
+            .card > .card-front > div.card-thumbnail {
+                height: 175px;
+            }
+
+            .card > .card-front > div.card-excerpt {
+                flex: 1;
+            }
+
+            .card > .card-front > div.card-cta {
+                height: 40px !important;
+                flex: 0;
+                align-self: flex-end;
+                width: 100%;
+                font-weight: bold;
+            }
+
+
+    .card > .card-back {
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+.card-back {
+    /*background-image: linear-gradient(90deg, #e3f2fd 25%, #ffffff 25%, #ffffff 50%, #e3f2fd 50%, #e3f2fd 75%, #ffffff 75%, #ffffff 100%);
+    background-size: 40.00px 40.00px;*/
+}
+
+.card > .card-back:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    background-color: #fff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    content: '';
+    z-index: 1;
+    transform-origin: bottom;
+}
+
+.card:hover > .card-back:after {
+    -webkit-transform: scaleY( 0 );
+    transform: scaleY( 0 );
+}
+
+.card:hover > .card-front h3,
+.card:hover > .card-front p,
+.card:hover > .card-front a {
+    color: #000;
+}

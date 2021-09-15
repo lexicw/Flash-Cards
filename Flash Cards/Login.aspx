@@ -116,20 +116,25 @@
          <div class="col-md-6 col-sm-12">
             <div class="login-form">
                <form>
-                  <div class="form-group">
-                     <label>User Name</label>
+                  <div class="form-floating mb-3">
                      <asp:TextBox runat="server" id="userNameTxt" type="text" class="form-control" placeholder="User Name"></asp:TextBox>
+                      <label for="userNameTxt">User Name</label>
                   </div>
-                  <div class="form-group">
-                     <label>Password</label>
+                  <div class="form-floating">
                      <asp:TextBox runat="server" id="passwordTxt" type="password" class="form-control" placeholder="Password"></asp:TextBox>
+                      <label for="passwordTxt">Password</label>
                   </div>
-                   <br />
+                   <div class="form-check mt-2 mb-2">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Remember Me
+                      </label>
+                    </div>
                    <asp:Label CssClass="login-msg" ID="loginMsg" runat="server"></asp:Label>  
                   <asp:Button runat="server" type="submit" class="btn signin-button" onclick="LoginBtn_Click" Text="Log in"></asp:Button>
                </form>
-                
             </div>
          </div>
       </div>
+
 </asp:Content>
