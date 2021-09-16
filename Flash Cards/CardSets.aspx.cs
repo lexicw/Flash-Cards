@@ -20,11 +20,11 @@ namespace Flash_Cards
 
             if (!this.IsPostBack)
             {
-                this.BindRepeater();
+                this.BindSetRepeater();
             }
         }
 
-        private void BindRepeater()
+        private void BindSetRepeater()
         {
             string userId = Application["UserId"].ToString();
 
@@ -41,8 +41,27 @@ namespace Flash_Cards
                 rptSets.DataSource = dt;
                 rptSets.DataBind();
             }
+            conn.Close();
 
         }
 
-    }
+        protected void AddSetBtn_Click(object sender, EventArgs e)
+        {
+            string userId = Application["UserId"].ToString();
+            int setId = 6;
+            string setName = newSetNameTxt.Text;
+            string description = newDescText.Text;
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            conn.Open();
+
+            string query = "INSERT INTO Sets (setId, setName, description, userId) VALUES('" + setId + "','" + setName + "', '" + description + "', '" + userId + "');";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.ExecuteReader();
+            conn.Close();
+        }
+
+
+     }
 }

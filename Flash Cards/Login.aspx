@@ -11,7 +11,7 @@
 
     .sidenav {
         height: 100%;
-        background-color: #337ab7;
+        background-color: #000;
         overflow-x: hidden;
         padding-top: 20px;
     }
@@ -27,10 +27,12 @@
     margin: auto;
     margin-bottom: 2px;
     display: block;
-    background-color: #337ab7;
+    background-color: #e3f2fd;
+    border: 2px solid #000;
+    color: #000;
 }
     .signin-button:hover, .signin-button:focus {
-        background-color: #245580;
+        background-color: #000;
         color: #FFF;
     }
 
@@ -105,9 +107,8 @@
 
     <div class="sidenav">
          <div class="login-main-text">
-            <h2>Flash Cards<br> Login Page</h2>
+            <h1>Flash Cards<br> Login Page</h1>
 
-            <p><i class="fas fa-square"></i> <i class="far fa-square"></i> <i class="fas fa-square"></i> <i class="far fa-square"></i> <i class="fas fa-square"></i></p>
             <p>Login or register from here to access.</p>
          </div>
       </div>
