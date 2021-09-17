@@ -48,18 +48,27 @@ namespace Flash_Cards
         protected void AddSetBtn_Click(object sender, EventArgs e)
         {
             string userId = Application["UserId"].ToString();
-            int setId = 6;
+
+
+            if (String.IsNullOrEmpty(newSetNameTxt.Text) || String.IsNullOrEmpty(newDescText.Text))
+            {
+            
+            }
+
+            else { 
             string setName = newSetNameTxt.Text;
             string description = newDescText.Text;
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
 
-            string query = "INSERT INTO Sets (setId, setName, description, userId) VALUES('" + setId + "','" + setName + "', '" + description + "', '" + userId + "');";
-
+            string query = "INSERT INTO Sets (setName, description, userId) VALUES('" + setName + "', '" + description + "', '" + userId + "');";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteReader();
             conn.Close();
+
+            Response.Redirect("CardSets.aspx");
+            }
         }
 
 

@@ -54,9 +54,6 @@
             </div>
         </section>
 
-
-
-
         <!-- Edit Sets Modal -->
         <div class="modal fade" id="editSetsModal" tabindex="-1" aria-labelledby="editSetsModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
