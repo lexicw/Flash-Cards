@@ -14,8 +14,8 @@
                                     <div class="card-front">
                                         <div class="card-excerpt">
                                             <div style="float: right;">
-                                                <button type="button" class="icon-buttons" data-bs-toggle="modal" data-bs-target="#editSetsModal"><i class="fas fa-edit"></i></button>
-                                                <button class="icon-buttons"><i class="fas fa-trash-alt"></i></button>
+                                                <button type="button" class="icon-buttons" data-bs-toggle="modal" data-bs-target="#editSetsModal"><i class="fas fa-edit" title="Edit Set"></i></button>
+                                                <button class="icon-buttons"><i class="fas fa-trash-alt" title="Delete Set"></i></button>
                                             </div>
                                             <h3 class="card-title text-center">
                                                 <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("setName") %>' /></h3>
@@ -36,7 +36,7 @@
                     </asp:Repeater>
 
 
-                    <div role="button" tabindex="0" class="col-xs-12 col-md-4 col-card" data-bs-toggle="modal" data-bs-target="#addSetModal">
+                    <div role="button" tabindex="0" class="col-xs-12 col-md-4 col-card" data-bs-toggle="modal" data-bs-target="#addSetModal" title="Add New Set">
                         <div class="card add-new-set">
                             <div class="card-front" style="background-color: #f4f4f4;">
                                 <h2 class="card-btn" style="margin: auto;">Add New Set
