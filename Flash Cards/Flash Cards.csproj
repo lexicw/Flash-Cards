@@ -111,7 +111,7 @@
       <DependentUpon>FlashCards.mdf</DependentUpon>
     </Content>
     <Content Include="Login.aspx" />
-    <Content Include="Study.aspx" />
+    <Content Include="Cards.aspx" />
     <Content Include="CardSets.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -183,12 +183,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Study.aspx.cs">
-      <DependentUpon>Study.aspx</DependentUpon>
+    <Compile Include="Cards.aspx.cs">
+      <DependentUpon>Cards.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Study.aspx.designer.cs">
-      <DependentUpon>Study.aspx</DependentUpon>
+    <Compile Include="Cards.aspx.designer.cs">
+      <DependentUpon>Cards.aspx</DependentUpon>
     </Compile>
     <Compile Include="CardSets.aspx.cs">
       <DependentUpon>CardSets.aspx</DependentUpon>

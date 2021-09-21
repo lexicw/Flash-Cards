@@ -23,7 +23,7 @@
                                         </div>
                                         <div class="card-cta">
                                             <p>
-                                                <button type="button" class="btn btn-primary fc-button">Study This Set &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></button>
+                                                <a href="/Cards.aspx" type="button" class="btn btn-primary fc-button">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
                                             </p>
                                         </div>
                                     </div>
