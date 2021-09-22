@@ -33,11 +33,19 @@
                 <button id="btnSave" type="button" class="btn btn-dark" style="float: left; margin-left: 5px; margin-bottom: 5px;">Save Cards</button>
             </div>
 
-        <ul class="add-card-list">
-          <li class="cards-add-list">Card 1</li>
-          <li class="cards-add-list">Card 2</li>
-          <li class="cards-add-list">Card 3</li>
-        </ul>
+
+        <asp:GridView CssClass="card-gridview" ID="cardGridView" runat="server" AutoGenerateColumns="false" AllowPaging="true" ForeColor="#000"
+            OnPageIndexChanging="OnPaging" PageSize="10" OnRowDataBound="OnRowDataBound" OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit" OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No records has been added.">
+            <Columns>
+                <asp:BoundField ItemStyle-Width="50%" DataField="front" HeaderText="Card Front" />
+                <asp:BoundField ItemStyle-Width="50%" DataField="back" HeaderText="Card Back" />
+                <asp:CommandField ButtonType="Link" ShowEditButton="true" EditText="Edit" /> 
+                <asp:CommandField ShowDeleteButton="true" DeleteText="" ControlStyle-CssClass="fas fa-trash-alt card-delete-button" /> 
+            </Columns>
+        </asp:GridView>
+
+
+
 
     </div>
     <script>

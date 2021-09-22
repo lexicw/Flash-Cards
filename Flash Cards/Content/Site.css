@@ -363,30 +363,6 @@ div:hover > .card-btn {
     list-style-type: none;
 }
 
-/* Style the list items */
-ul li.cards-add-list {
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background: #FFF;
-    font-size: 18px;
-    transition: 0.2s;
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-    /* Set all odd list items to a different color (zebra-stripes) */
-    ul li.cards-add-list:nth-child(odd) {
-        background: #f9f9f9;
-    }
-
-    /* Darker background-color on hover */
-    ul li.cards-add-list:hover {
-        background: #ddd;
-    }
-
 /* Style the close button */
 .close {
     position: absolute;
@@ -456,4 +432,70 @@ ul li.cards-add-list {
 
 .remove {
     display: block;
+}
+
+.card-gridview {
+    border: none;
+}
+
+
+    .card-gridview tr {
+        position: relative;
+        background: #FFF;
+        font-size: 18px;
+    }
+
+    .card-gridview thead, tbody, tfoot, tr, td, th {
+        padding: 12px 8px 12px 40px;
+    }
+    /* Set all odd list items to a different color (zebra-stripes) */
+    .card-gridview tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+
+/* Darker background-color on hover */
+    .card-gridview tr:hover {
+        background: #ddd;
+    }
+
+    .card-gridview input[type=text] {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+        .card-gridview input[type=text]:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: #86b7fe;
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+
+/*input[value="Update"] {
+    background-color: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: url(/Images/check-circle-solid.svg);
+}*/
+
+.card-delete-button {
+    transition: transform .2s;
+}
+
+.card-delete-button:hover {
+    transform: scale(1.5);
 }
