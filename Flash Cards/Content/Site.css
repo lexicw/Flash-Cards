@@ -436,17 +436,18 @@ div:hover > .card-btn {
 
 .card-gridview {
     border: none;
+    width: 100%;
 }
 
 
     .card-gridview tr {
         position: relative;
-        background: #FFF;
         font-size: 18px;
     }
 
+
     .card-gridview thead, tbody, tfoot, tr, td, th {
-        padding: 12px 8px 12px 40px;
+        padding: 12px 8px 12px 5px;
     }
     /* Set all odd list items to a different color (zebra-stripes) */
     .card-gridview tr:nth-child(even) {
@@ -456,6 +457,18 @@ div:hover > .card-btn {
 /* Darker background-color on hover */
     .card-gridview tr:hover {
         background: #ddd;
+    }
+
+    .card-gridview tr:first-of-type:hover {
+        background: #FFF;
+    }
+
+    .card-gridview tr:last-of-type:hover {
+        background: #f9f9f9;
+    }
+
+    .card-gridview a {
+        display: inline;
     }
 
     .card-gridview input[type=text] {
@@ -484,18 +497,81 @@ div:hover > .card-btn {
             box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
         }
 
-/*input[value="Update"] {
-    background-color: none;
-    border: none;
-    width: 30px;
-    height: 30px;
-    background: url(/Images/check-circle-solid.svg);
-}*/
-
 .card-delete-button {
     transition: transform .2s;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.card-delete-button:hover {
-    transform: scale(1.5);
+    .card-delete-button:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+        color: blue;
+    }
+
+.card-button-update {
+    transition: transform .2s;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .card-button-update:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+        color: green;
+    }
+
+.card-button-cancel {
+    transition: transform .2s;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .card-button-cancel:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+        color: red;
+    }
+
+.card-button-edit {
+    transition: transform .2s;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .card-button-edit:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+        color: orange;
+    }
+
+.grid-paging a {
+    background-color: #FFF;
+    color: #969696;
+    border: 1px solid #969696;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+    .grid-paging a:hover {
+        background-color: #dddddd;
+    }
+
+.grid-paging span {
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid #000;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
 }

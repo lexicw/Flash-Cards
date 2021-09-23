@@ -21,7 +21,7 @@ namespace Flash_Cards
 
         }
 
-        private void BindCards()
+        public void BindCards()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
@@ -37,6 +37,8 @@ namespace Flash_Cards
                 cardGridView.DataBind();
             }
             conn.Close();
+
+            
         }
 
         protected void OnPaging(object sender, GridViewPageEventArgs e)
@@ -54,10 +56,10 @@ namespace Flash_Cards
         protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             GridViewRow row = cardGridView.Rows[e.RowIndex];
-            string front = (row.Cells[1].Controls[0] as TextBox).Text;
-            string back = (row.Cells[2].Controls[0] as TextBox).Text;
+            string front = (row.Cells[0].Controls[0] as TextBox).Text;
+            string back = (row.Cells[1].Controls[0] as TextBox).Text;
 
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("UPDATE Cards SET front = @front, back = @back WHERE cardId = @cardId"))

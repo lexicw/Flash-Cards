@@ -1,25 +1,25 @@
-﻿<%@ Page Title="Cards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cards.aspx.cs" Inherits="Flash_Cards.Cards" %>
+﻿<%@ Page Title="Cards" Language="C#" MasterPageFile="~/Site.Master" MaintainScrollPositionOnPostback="true" smartnavigation="true" AutoEventWireup="true" CodeBehind="Cards.aspx.cs" Inherits="Flash_Cards.Cards" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
         <h2><%: Title %></h2>
-        <button class="back-button" runat="server" onclick="JavaScript:window.history.back(1);return false;" title="Back to Card Sets"><i class="fas fa-chevron-left"></i>&nbsp; Back</button>
+        <button class="back-button" runat="server" onclick="history.go(-1); return false;" title="Back to Card Sets"><i class="fas fa-chevron-left"></i>&nbsp; Back</button>
 
-            <section class="flash-card-div">
+            <%--<section class="flash-card-div">
               <div class="flash-card" onclick="flip()">
                 <div class="front"><h3><asp:Label ID="Label1" runat="server"></asp:Label></h3></div>
                 <div class="back"><h3><asp:Label ID="Label2" runat="server"></asp:Label></h3></div>
               </div>
-            </section>
+            </section>--%>
         <br />
             <p>&nbsp;</p>
             <div class="table table-responsive">
             <table class="table table-responsive table-bordered" style="background-color: #FFF;">
             <thead>
 	            <tr style="background-color: #e3f2fd;">
-    	            <td>Card Front</td>
-    	            <td>Card Back</td>
+    	            <td><b>Card Front</b></td>
+    	            <td><b>Card Back</b></td>
     	            <td width="25px;"></td>
                 </tr>
             </thead>
@@ -33,17 +33,28 @@
                 <button id="btnSave" type="button" class="btn btn-dark" style="float: left; margin-left: 5px; margin-bottom: 5px;">Save Cards</button>
             </div>
 
-
         <asp:GridView CssClass="card-gridview" ID="cardGridView" runat="server" AutoGenerateColumns="false" AllowPaging="true" ForeColor="#000"
-            OnPageIndexChanging="OnPaging" PageSize="10" OnRowDataBound="OnRowDataBound" OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit" OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No records has been added.">
+            OnPageIndexChanging="OnPaging" PageSize="8" OnRowDataBound="OnRowDataBound" OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit" OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No records has been added.">
             <Columns>
                 <asp:BoundField ItemStyle-Width="50%" DataField="front" HeaderText="Card Front" />
                 <asp:BoundField ItemStyle-Width="50%" DataField="back" HeaderText="Card Back" />
-                <asp:CommandField ButtonType="Link" ShowEditButton="true" EditText="Edit" /> 
-                <asp:CommandField ShowDeleteButton="true" DeleteText="" ControlStyle-CssClass="fas fa-trash-alt card-delete-button" /> 
+                 <asp:TemplateField>
+                    <EditItemTemplate>
+                        <div style="width:50px;">
+                        <asp:LinkButton ID="ButtonUpdate" runat="server" CommandName="Update" Text="" CssClass="fas fa-check-circle card-button-update" />
+                        <asp:LinkButton ID="ButtonCancel" runat="server" CommandName="Cancel" Text="" CssClass="fas fa-times-circle card-button-cancel" />
+                        </div>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <div style="width:50px;">
+                        <asp:LinkButton ID="ButtonEdit" runat="server" CommandName="Edit" Text="" CssClass="fas fa-edit card-button-edit" />
+                        <asp:LinkButton ID="ButtonDelete" runat="server" CommandName="Delete" Text="" CssClass="fas fa-trash-alt card-delete-button" />
+                        </div>
+                    </ItemTemplate>
+                 </asp:TemplateField>
             </Columns>
+            <PagerStyle HorizontalAlign="Right" CssClass="grid-paging" />
         </asp:GridView>
-
 
 
 

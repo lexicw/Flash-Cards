@@ -74,7 +74,7 @@
         </nav>
 
 
-       <asp:Button runat="server" ID="logOutBtn" class="btn open-button btn-dark btn-lg" onclick="Logout_Click" Text="Log Out"></asp:Button>
+       <%--<asp:Button runat="server" ID="logOutBtn" class="btn open-button btn-dark btn-lg" onclick="Logout_Click" Text="Log Out"></asp:Button>--%>
 
   </div>
 
