@@ -35,6 +35,8 @@ namespace Flash_Cards
                 sda.Fill(dt);
                 cardGridView.DataSource = dt;
                 cardGridView.DataBind();
+                ViewState["dirState"] = dt;
+                ViewState["sortdr"] = "Asc";
             }
             conn.Close();
 
@@ -93,5 +95,40 @@ namespace Flash_Cards
                 //(e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
         }
+
+        protected void OnRowSwap(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void Back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CardSets.aspx");
+        }
+
+        protected void GridView_Sorting(Object sender, GridViewSortEventArgs e)
+        {
+            DataTable dtrslt = (DataTable)ViewState["dirState"];
+
+            if (dtrslt.Rows.Count > 0)
+            {
+                if (Convert.ToString(ViewState["sortdr"]) == "Asc")
+                {
+                    dtrslt.DefaultView.Sort = e.SortExpression + " Desc";
+                    ViewState["sortdr"] = "Desc";
+                }
+                else
+                {
+                    dtrslt.DefaultView.Sort = e.SortExpression + " Asc";
+                    ViewState["sortdr"] = "Asc";
+                }
+                cardGridView.DataSource = dtrslt;
+                cardGridView.DataBind();
+
+
+            }
+        }
+
+
     }
 }

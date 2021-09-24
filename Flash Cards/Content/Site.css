@@ -39,15 +39,13 @@ button {
     background-color: #e3f2fd;
     border: 2px solid #000;
     color: #000;
-    transition: transform .2s;
+    transition: ease 0.5s;
 }
 
     .fc-button:hover {
         background-color: #e3e4e5 !important;
         border: 2px solid #000;
         color: #000 !important;
-        transform: scale(1.05);
-        transition: transform .2s;
     }
 
 .icon-buttons {
@@ -428,7 +426,16 @@ div:hover > .card-btn {
     background: none;
     float: left;
     font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform .2s;
 }
+
+    .back-button:hover {
+        color: #000;
+        transform: scale(1.15);
+    }
 
 .remove {
     display: block;
@@ -459,6 +466,10 @@ div:hover > .card-btn {
         background: #ddd;
     }
 
+    .card-gridview tr {
+        border: 1px solid lightgray;
+    }
+
     .card-gridview tr:first-of-type:hover {
         background: #FFF;
     }
@@ -467,8 +478,13 @@ div:hover > .card-btn {
         background: #f9f9f9;
     }
 
+        .card-gridview th {
+            
+        }
+
     .card-gridview a {
         display: inline;
+        text-decoration: none;
     }
 
     .card-gridview input[type=text] {
@@ -498,6 +514,8 @@ div:hover > .card-btn {
         }
 
 .card-delete-button {
+    padding-left: 2px;
+    padding-right: 2px;
     transition: transform .2s;
     color: #000;
     text-decoration: none;
@@ -507,10 +525,12 @@ div:hover > .card-btn {
     .card-delete-button:hover {
         transform: scale(1.5);
         cursor: pointer;
-        color: blue;
+        color: darkslategray;
     }
 
 .card-button-update {
+    padding-left: 2px;
+    padding-right: 2px;
     transition: transform .2s;
     color: #000;
     text-decoration: none;
@@ -524,6 +544,8 @@ div:hover > .card-btn {
     }
 
 .card-button-cancel {
+    padding-left: 2px;
+    padding-right: 2px;
     transition: transform .2s;
     color: #000;
     text-decoration: none;
@@ -537,6 +559,8 @@ div:hover > .card-btn {
     }
 
 .card-button-edit {
+    padding-left: 2px;
+    padding-right: 2px;
     transition: transform .2s;
     color: #000;
     text-decoration: none;
@@ -546,7 +570,22 @@ div:hover > .card-btn {
     .card-button-edit:hover {
         transform: scale(1.5);
         cursor: pointer;
-        color: orange;
+        color: darkgoldenrod;
+    }
+
+.card-button-swap {
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: transform .2s;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .card-button-swap:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+        color: blue;
     }
 
 .grid-paging a {
