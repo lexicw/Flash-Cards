@@ -24,24 +24,6 @@ namespace Flash_Cards
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl masterpage;
 
         /// <summary>
-        /// welcomeList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl welcomeList;
-
-        /// <summary>
-        /// lblUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
-
-        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

@@ -27,7 +27,7 @@
     margin: auto;
     margin-bottom: 2px;
     display: block;
-    background-color: #e3f2fd;
+    background-color: #c0e0f4;
     border: 2px solid #000;
     color: #000;
 }
@@ -85,7 +85,7 @@
     }
 
     .stripe-bg {
-        background-image: linear-gradient(45deg, #e3f2fd 25%, #ffffff 25%, #ffffff 50%, #e3f2fd 50%, #e3f2fd 75%, #ffffff 75%, #ffffff 100%);
+        background-image: linear-gradient(45deg, #c0e0f4 25%, #ffffff 25%, #ffffff 50%, #c0e0f4 50%, #c0e0f4 75%, #ffffff 75%, #ffffff 100%);
         background-size: 28.28px 28.28px;
         width: 100%;
         padding: 75px;

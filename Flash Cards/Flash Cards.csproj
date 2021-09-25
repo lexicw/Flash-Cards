@@ -113,6 +113,7 @@
     <Content Include="Images\check-circle-solid.svg" />
     <Content Include="Images\edit-solid.svg" />
     <Content Include="Images\times-circle-solid.svg" />
+    <Content Include="Images\white.png" />
     <Content Include="Login.aspx" />
     <Content Include="Cards.aspx" />
     <Content Include="CardSets.aspx" />
