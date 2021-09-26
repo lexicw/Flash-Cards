@@ -131,80 +131,49 @@
         </asp:ScriptManager>
 
 
-        <div id="masterpage" runat="server">
+        <asp:ContentPlaceHolder ID="masterpage" runat="server"> 
 
-<%--        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" runat="server" href="~/">Flash Cards</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" runat="server" href="~/CardSets">Card Sets</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Games &nbsp;&nbsp;<i class="arrow down"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Memory</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul runat="server" id="welcomeList">
-                        <li>
-                            <div>
-                                 Welcome, <asp:Label ID="lblUsername" runat="server"><%=Application["UserName"].ToString() %></asp:Label>!
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>--%>
-
-
-        <header class="navbar sticky-top flex-md-nowrap p-0">
-            <a class="col-md-3 col-lg-2 me-0 px-3 navbar-brand" runat="server" href="~/">Flash Cards</a>
+        <header class="navbar navbar-light sticky-top flex-md-nowrap p-0">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 navbar-brand" runat="server" href="~/">Flash Cards</a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="user-details w-100" type="text"></div>
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
-                    <a class="nav-link px-3 btn btn-light logout-btn" href="#">Log out</a>
+                    <asp:Button runat="server" ID="logOutBtn" class="btn btn-light logout-btn" href="#" onclick="Logout_Click" Text="Log Out"></asp:Button>
                 </div>
             </div>
         </header>
 
-        <div class="container-fluid">
+
+         <div class="container-fluid">
             <div class="row">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div class="position-sticky pt-3">
-                        <ul class="nav flex-column">
+                        <ul class="nav flex-column nav-pills">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="~/">
-                                    <span data-feather="home" runat="server"></span>
-                                    Home
+                                <a class="nav-link" runat="server" aria-current="page" href="/Default">
+                                    <span data-feather="home"></span>
+                                    <i class="fas fa-home"></i> Home
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" runat="server" href="~/CardSets">
+                                <a class="nav-link" runat="server" href="/CardSets">
                                     <span data-feather="file"></span>
-                                    Card Sets
+                                    <i class="far fa-square"></i> Card Sets
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <span data-feather="shopping-cart"></span>
-                                    Games
+                                    <i class="far fa-clipboard"></i> Tasks
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <span data-feather="users"></span>
-                                    Tasks
+                                    <i class="fas fa-puzzle-piece"></i> Games
                                 </a>
                             </li>
                         </ul>
@@ -213,8 +182,9 @@
             </div>
         </div>
 
-            <%--<asp:Button runat="server" ID="logOutBtn" class="btn open-button btn-dark btn-lg" onclick="Logout_Click" Text="Log Out"></asp:Button>--%>
-        </div>
+        </asp:ContentPlaceHolder>
+        <%--<div id="masterpage" runat="server">
+        </div>--%>
 
         <div class="mb-4"></div>
 
@@ -232,6 +202,17 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
+        $(function () {
+            console.log("Now printing" + location.pathname.split("/")[1]);
+            if (location.pathname.split("/")[1] != '') {
+                $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+            }
+            else {
+                $('nav a[href^="/' + "Default" + '"]').addClass('active');
+            }
+        });
+        
     </script>
 
 </body>

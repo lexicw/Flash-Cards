@@ -641,11 +641,6 @@ div:hover > .card-btn {
     min-height: 100px;
 }
 
-.db-container {
-    width: 100%;
-    padding-left: 16.6% !important;
-}
-
 .logout-btn {
     color: #000;
     margin-right: 10px;
@@ -655,3 +650,17 @@ div:hover > .card-btn {
     .logout-btn:hover {
         color: #606060;
     }
+
+.nav-pills .nav-link.active {
+    background-color: #000;
+    color: #FFF !important;
+}
+
+.search-bar {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-link:hover {
+    background-color: #e3e4e5;
+}
