@@ -138,7 +138,10 @@
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="user-details w-100" type="text"></div>
+            <div class="user-details w-100" type="text">
+                <asp:Label ID="userLabel" runat="server" class="user-image"></asp:Label>
+                 Welcome, <asp:Label ID="lblUsername" runat="server"><%=Application["UserName"].ToString() %></asp:Label>! 
+            </div>
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
                     <asp:Button runat="server" ID="logOutBtn" class="btn btn-light logout-btn" href="#" onclick="Logout_Click" Text="Log Out"></asp:Button>
@@ -165,13 +168,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/Tasks">
                                     <span data-feather="shopping-cart"></span>
                                     <i class="far fa-clipboard"></i> Tasks
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/Games">
                                     <span data-feather="users"></span>
                                     <i class="fas fa-puzzle-piece"></i> Games
                                 </a>
@@ -183,8 +186,6 @@
         </div>
 
         </asp:ContentPlaceHolder>
-        <%--<div id="masterpage" runat="server">
-        </div>--%>
 
         <div class="mb-4"></div>
 

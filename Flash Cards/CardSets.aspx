@@ -10,7 +10,7 @@
                         <ItemTemplate>
 
                             <div class="col-xs-12 col-md-4 col-card">
-                                <div class="card">
+                                <div class="card card-shadow">
                                     <div class="card-front">
                                         <div class="card-excerpt">
                                             <div style="float: right;">
@@ -23,7 +23,7 @@
                                         </div>
                                         <div class="card-cta">
                                             <p>
-                                                <a href="/Cards.aspx" type="button" class="btn btn-primary fc-button">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <a href="/Cards.aspx" type="button" class="btn fc-button btn-light">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
                                             </p>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-dark">Save</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>

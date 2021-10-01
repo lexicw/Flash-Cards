@@ -16,6 +16,8 @@ namespace Flash_Cards
             // Sets the username and password by default for testing purposes
             Application["UserName"] = "Lexi";
             Application["UserId"] = 1;
+            string userLetter = Application["UserName"].ToString();
+            userLabel.Text = userLetter.Substring(0, 1);
         }
 
         public void Logout_Click(object sender, EventArgs e)

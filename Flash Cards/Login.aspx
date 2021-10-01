@@ -107,7 +107,8 @@
 
     <div class="sidenav">
          <div class="login-main-text">
-            <h1>Flash Cards<br> Login Page</h1>
+            <h1>Flash Cards</h1> 
+             <h3>Login Page</h3>
 
             <p>Login or register from here to access.</p>
          </div>
@@ -137,5 +138,5 @@
             </div>
          </div>
       </div>
-
+    <br /><br />
 </asp:Content>
