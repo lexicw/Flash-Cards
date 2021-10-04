@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace Flash_Cards
 {
@@ -71,6 +72,14 @@ namespace Flash_Cards
             }
         }
 
+        protected void EditSetBtn_Click(object sender, EventArgs e)
+        {
+            LinkButton button = (LinkButton)(sender);
+            RepeaterItem item = (RepeaterItem)button.Parent;
+            var setId = ((Label)item.FindControl("lblID")).Text;
 
-     }
+        }
+
+
+    }
 }

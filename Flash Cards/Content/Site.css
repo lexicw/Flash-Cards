@@ -83,13 +83,8 @@ button {
     background: none;
     font-size: 25px;
     display: inline;
-    transition: transform .2s;
+    color: #000;
 }
-
-    .icon-buttons:hover {
-        transform: scale(1.5);
-    }
-
 
 .delete-button {
     width: 100%;

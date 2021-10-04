@@ -13,5 +13,32 @@ namespace Flash_Cards
 
     public partial class _Default
     {
+
+        /// <summary>
+        /// ToDoList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ToDoList;
+
+        /// <summary>
+        /// StickyNoteOne control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea StickyNoteOne;
+
+        /// <summary>
+        /// StickyNoteTwo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea StickyNoteTwo;
     }
 }

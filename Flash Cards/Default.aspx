@@ -14,23 +14,22 @@
                 <span class="paper-hole"></span>
                 <span class="paper-hole-2"></span>
                 <span class="paper-hole-3"></span>
-                <div class="paper-text" href="#" spellcheck="false" contenteditable>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum sed arcu non odio. Non pulvinar neque laoreet suspendisse. Faucibus pulvinar elementum integer enim neque. Justo laoreet sit amet cursus sit amet dictum. Auctor elit sed vulputate mi sit. Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Lorem ipsum dolor sit amet. A pellentesque sit amet porttitor. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Eu volutpat odio facilisis mauris sit amet. Platea dictumst quisque sagittis purus sit amet volutpat. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Metus vulputate eu scelerisque felis imperdiet proin.  
-                </div>
+                <h3 class="paper-header">To-Do List</h3>
+                <textarea runat="server" id="ToDoList" class="paper-text" href="#" spellcheck="false" maxlength="300" contenteditable>- To-Do List Text Here</textarea>
             </div>
 
             <ul class="notes-ul">
                 <li class="notes-li">
-                    <textarea class="sticky-note" href="#" maxlength="90" contenteditable>Text</textarea>
+                    <textarea runat="server" id="StickyNoteOne" class="sticky-note" href="#" maxlength="90" contenteditable>Text</textarea>
                 </li>
                 <li class="notes-li">
-                    <textarea class="sticky-note" href="#" maxlength="90" contenteditable>Text</textarea>
+                    <textarea runat="server" id="StickyNoteTwo" class="sticky-note" href="#" maxlength="90" contenteditable>Text</textarea>
                 </li>
                 <li>
             </ul>
             <span class="paper-clip"></span>
             <span class="paper-clip-2"></span>
-            <a href="#" role="button" class="tape">Save</a>
+            <asp:Button runat="server" OnClick="Save_Click" class="tape" Text="Save"></asp:Button>
         </div>
 
         <div id="carouselExampleDark" class="carousel carousel-dark slide mb-5" data-bs-ride="carousel">

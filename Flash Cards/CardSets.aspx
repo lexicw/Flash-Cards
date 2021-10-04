@@ -5,52 +5,56 @@
         <h2><%: Title %></h2>
         <section class="container-fluid container-feed">
             <div class="container">
-                <div class="row">
-                    <asp:Repeater ID="rptSets" runat="server">
-                        <ItemTemplate>
 
-                            <div class="col-xs-12 col-md-4 col-card">
-                                <div class="card card-shadow">
-                                    <div class="card-front">
-                                        <div class="card-excerpt">
-                                            <div style="float: right;">
-                                                <button type="button" class="icon-buttons" data-bs-toggle="modal" data-bs-target="#editSetsModal"><i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="Edit Set"></i></button>
-                                                <button class="icon-buttons"><i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Delete Set"></i></button>
+
+                <asp:UpdatePanel class="row" ID="panelSets" runat="server">
+                    <ContentTemplate>
+                        <asp:Repeater ID="rptSets" runat="server">
+                            <ItemTemplate>
+
+                                <div class="col-xs-12 col-md-4 col-card">
+                                    <div class="card card-shadow">
+                                        <div class="card-front">
+                                            <div class="card-excerpt">
+                                                <div style="float: right;">
+                                                    <asp:Label ID="lblID" runat="server" Text='<%#Eval("setId") %>' style="visibility: hidden;" />
+
+                                                    <asp:LinkButton ClientIDMode="AutoID" ID="EditButton" runat="server" OnClick="EditSetBtn_Click" OnClientClick="showModal();" CssClass="icon-buttons"><i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="Edit Set"></i></asp:LinkButton>
+
+                                                    <button class="icon-buttons"><i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Delete Set"></i></button>
+                                                </div>
+                                                <h3 class="card-title text-center">
+                                                    <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("setName") %>' /></h3>
+                                                <p class="card-text"><%# Eval("description") %></p>
                                             </div>
-                                            <h3 class="card-title text-center">
-                                                <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("setName") %>' /></h3>
-                                            <p class="card-text"><%# Eval("description") %></p>
+                                            <div class="card-cta">
+                                                <p>
+                                                    <a href="/Cards.aspx" type="button" class="btn fc-button btn-light">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="card-cta">
-                                            <p>
-                                                <a href="/Cards.aspx" type="button" class="btn fc-button btn-light">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
-                                            </p>
+                                        <div class="card-back">
+                                            &nbsp;
                                         </div>
-                                    </div>
-                                    <div class="card-back">
-                                        &nbsp;
                                     </div>
                                 </div>
-                            </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                            </ItemTemplate>
+                        </asp:Repeater>
 
-
-                    <div role="button" tabindex="0" class="col-xs-12 col-md-4 col-card" data-bs-toggle="modal" data-bs-target="#addSetModal" title="Add New Set">
-                        <div class="card add-new-set">
-                            <div class="card-front" style="background-color: #fafafa;">
-                                <h2 class="card-btn" style="margin: auto;">Add New Set
+                        <div role="button" tabindex="0" class="col-xs-12 col-md-4 col-card" data-bs-toggle="modal" data-bs-target="#addSetModal" title="Add New Set">
+                            <div class="card add-new-set">
+                                <div class="card-front" style="background-color: #fafafa;">
+                                    <h2 class="card-btn" style="margin: auto;">Add New Set
                                     <br />
-                                    <i class="fas fa-folder-plus" style="font-size: 50px;"></i></h2>
-                            </div>
-                            <div class="card-back">
-                                &nbsp;
+                                        <i class="fas fa-folder-plus" style="font-size: 50px;"></i></h2>
+                                </div>
+                                <div class="card-back">
+                                    &nbsp;
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-
-                </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </section>
 
@@ -92,11 +96,11 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label runat="server" id="lblNewSetName" for="setNameTxt" class="form-label">Set Name</label>
-                            <asp:TextBox runat="server" id="newSetNameTxt" class="form-control" placeholder="Name of your set."></asp:TextBox>
+                            <asp:TextBox runat="server" ID="newSetNameTxt" class="form-control" placeholder="Name of your set."></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <label runat="server" id="lblNewDesc" for="descTxt" class="form-label">Description</label>
-                            <asp:TextBox runat="server" TextMode="MultiLine" class="form-control" id="newDescText" rows="3" placeholder="Type your set description here."></asp:TextBox>
+                            <asp:TextBox runat="server" TextMode="MultiLine" class="form-control" ID="newDescText" Rows="3" placeholder="Type your set description here."></asp:TextBox>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -106,6 +110,14 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    <script type="text/javascript">
+        $(function () {
+            showModal = function () {
+                $("#editSetsModal").modal('show');
+            }
+        });
+    </script>
+ 
 </asp:Content>

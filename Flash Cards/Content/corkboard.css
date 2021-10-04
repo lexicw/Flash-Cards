@@ -15,7 +15,7 @@ div.board > * {
 .paper {
     background-color: #FFF;
     opacity: 0.9;
-    background-size: 20px 20px;
+    background-size: 20px 25px;
     background-image: repeating-linear-gradient(0deg, #444cf7, #444cf7 0px, #FFF 1px, #FFF);
     width: 43%;
     height: 99%;
@@ -40,6 +40,8 @@ div.board > * {
         -o-transform: scale(1.03);
     }
 
+
+
 .paper-hole {
     width: 20px;
     height: 20px;
@@ -53,7 +55,20 @@ div.board > * {
     left: 10px;
     z-index: 3;
     box-shadow: inset 6px 0 4px -4px rgba(0,0,0,0.7);
+    overflow: hidden;
 }
+
+.paper-header {
+    margin-top: -30px;
+    margin-left: -45px;
+    color: #000;
+    font-weight: bold;
+    line-height: 1.03;
+    font-size: 25px;
+    text-align: center;
+    cursor: default;
+}
+
 
 .paper-hole-2 {
     width: 20px;
@@ -86,12 +101,18 @@ div.board > * {
 }
 
 .paper-text {
+    padding-top: 4px;
     margin-left: 5px;
     width: 98%;
     height: 99%;
     color: #000;
     text-decoration: none;
-    line-height: 1.43;
+    line-height: 1.03;
+    font-size: 25px;
+    border: 0px;
+    background-color: transparent;
+    resize: none;
+    overflow-y: hidden;
 }
 
 .red-line {
@@ -130,6 +151,7 @@ div.board > * {
     border: 0px;
     font-weight: bold;
     font-size: 18px;
+    resize: none;
 }
 
 ul.notes-ul li:nth-child(even) textarea {
@@ -140,6 +162,7 @@ ul.notes-ul li:nth-child(even) textarea {
     background-image: linear-gradient(45deg, #c0e0f4 25%, #ffffff 25%, #ffffff 50%, #c0e0f4 50%, #c0e0f4 75%, #ffffff 75%, #ffffff 100%);
     background-size: 28.28px 28.28px;
     border: none;
+    resize: none;
 }
 
 ul.notes-ul li.notes-li textarea:hover, ul.notes-ul li.notes-li textarea:focus {
@@ -223,7 +246,7 @@ span.paper-clip-2 {
 }
 
 .tape {
-    background-color: hsla(0,0%,100%,.5);
+    background-color: hsla(0,0%,100%,.4);
     box-shadow: inset 0 0 1em .5em hsla(0,0%,100%,.1);
     transform: rotate(-5deg);
     -webkit-filter: drop-shadow(0 1px 1px hsla(0,0%,0%,.3));
@@ -240,6 +263,8 @@ span.paper-clip-2 {
     padding-right: 20px;
     margin-right: 20px;
     margin-top: 120px;
+    border-top: none;
+    border-bottom: none;
 }
 
     .tape:after {
