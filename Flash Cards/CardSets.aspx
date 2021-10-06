@@ -17,14 +17,12 @@
                                         <div class="card-front">
                                             <div class="card-excerpt">
                                                 <div style="float: right;">
-                                                    <asp:Label ID="lblID" runat="server" Text='<%#Eval("setId") %>' style="visibility: hidden;" />
-
-                                                    <asp:LinkButton ClientIDMode="AutoID" ID="EditButton" runat="server" OnClick="EditSetBtn_Click" OnClientClick="showModal();" CssClass="icon-buttons"><i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="Edit Set"></i></asp:LinkButton>
+                                                    <asp:LinkButton ClientIDMode="AutoID" CommandArgument='<%#Eval("setId")%>' SetName='<%#Eval("setName")%>' SetDesc='<%#Eval("description")%>' ID="EditButton" runat="server" OnClick="EditSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-edit icon-zoom"></i></asp:LinkButton>
 
                                                     <button class="icon-buttons"><i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Delete Set"></i></button>
                                                 </div>
                                                 <h3 class="card-title text-center">
-                                                    <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("setName") %>' /></h3>
+                                                    <asp:Label ID="lblSetName" runat="server" Text='<%# Eval("setName") %>' /></h3>
                                                 <p class="card-text"><%# Eval("description") %></p>
                                             </div>
                                             <div class="card-cta">
@@ -69,11 +67,11 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="editSetNameTxt" class="form-label">Set Name</label>
-                            <input class="form-control" id="editSetNameTxt">
+                            <asp:Textbox runat="server" class="form-control" id="editSetNameTxt" ClientIDMode="Static" />
                         </div>
                         <div class="mb-3">
                             <label for="editDescTxt" class="form-label">Description</label>
-                            <textarea class="form-control" id="editDescTxt" rows="3"></textarea>
+                            <asp:TextBox runat="server" class="form-control" id="editDescTxt" TextMode="MultiLine" Rows="3" ClientIDMode="Static"></asp:TextBox>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -112,10 +110,12 @@
         </div>
     </div>
 
-    <script type="text/javascript">
+    <script>
         $(function () {
-            showModal = function () {
-                $("#editSetsModal").modal('show');
+            showModal = function (setName, setDesc) {
+                $("#editSetNameTxt").val(setName);
+                $("#editDescTxt").text(setDesc);
+                $("#editSetsModal").modal("show");
             }
         });
     </script>

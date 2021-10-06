@@ -33,6 +33,24 @@ namespace Flash_Cards
         protected global::System.Web.UI.WebControls.Repeater rptSets;
 
         /// <summary>
+        /// editSetNameTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox editSetNameTxt;
+
+        /// <summary>
+        /// editDescTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox editDescTxt;
+
+        /// <summary>
         /// lblNewSetName control.
         /// </summary>
         /// <remarks>

@@ -74,12 +74,11 @@ namespace Flash_Cards
 
         protected void EditSetBtn_Click(object sender, EventArgs e)
         {
-            LinkButton button = (LinkButton)(sender);
-            RepeaterItem item = (RepeaterItem)button.Parent;
-            var setId = ((Label)item.FindControl("lblID")).Text;
+            string setId = ((LinkButton)sender).CommandArgument.ToString();
+            string setName = ((LinkButton)sender).Attributes["SetName"].ToString();
+            string setDesc = ((LinkButton)sender).Attributes["SetDesc"].ToString();
 
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Modal", "showModal('" + setName + "', '" + setDesc + "');", true);
         }
-
-
     }
 }

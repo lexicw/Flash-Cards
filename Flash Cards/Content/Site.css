@@ -83,8 +83,22 @@ button {
     background: none;
     font-size: 25px;
     display: inline;
+    transition: transform .2s;
     color: #000;
 }
+
+    .icon-buttons:hover {
+        transform: scale(1.5);
+    }
+
+.icon-zoom {
+    transition: transform .2s;
+}
+
+    .icon-zoom:hover {
+        transform: scale(1.5);
+    }
+
 
 .delete-button {
     width: 100%;
@@ -785,3 +799,7 @@ body {
         margin-bottom: 18px;
         padding-bottom: 0px;
     }
+
+.sidebar {
+    font-size: 18px;
+}

@@ -14,7 +14,6 @@
                 <span class="paper-hole"></span>
                 <span class="paper-hole-2"></span>
                 <span class="paper-hole-3"></span>
-                <h3 class="paper-header">To-Do List</h3>
                 <textarea runat="server" id="ToDoList" class="paper-text" href="#" spellcheck="false" maxlength="300" contenteditable>- To-Do List Text Here</textarea>
             </div>
 
@@ -29,9 +28,12 @@
             </ul>
             <span class="paper-clip"></span>
             <span class="paper-clip-2"></span>
-            <asp:Button runat="server" OnClick="Save_Click" class="tape" Text="Save"></asp:Button>
+              <span class="pin"></span>
+              <span class="pin-2"></span>
+              <span class="pin-3"></span>
+            <asp:LinkButton runat="server" OnClick="Save_Click" class="tape" Text="Save"></asp:LinkButton>
         </div>
-
+        <br />
         <div id="carouselExampleDark" class="carousel carousel-dark slide mb-5" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
