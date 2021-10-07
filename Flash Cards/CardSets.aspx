@@ -17,9 +17,9 @@
                                         <div class="card-front">
                                             <div class="card-excerpt">
                                                 <div style="float: right;">
-                                                    <asp:LinkButton ClientIDMode="AutoID" CommandArgument='<%#Eval("setId")%>' SetName='<%#Eval("setName")%>' SetDesc='<%#Eval("description")%>' ID="EditButton" runat="server" OnClick="EditSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-edit icon-zoom"></i></asp:LinkButton>
+                                                    <asp:LinkButton ClientIDMode="AutoID" CommandArgument='<%#Eval("setId")%>' SetName='<%#Eval("setName")%>' SetDesc='<%#Eval("description")%>' ID="EditButton" runat="server" OnClick="EditSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-edit icon-zoom" title="Edit Set"></i></asp:LinkButton>
 
-                                                    <button class="icon-buttons"><i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Delete Set"></i></button>
+                                                    <asp:LinkButton ID="deleteSetBtn" runat="server" CommandArgument='<%#Eval("setId")%>' OnClientClick="return getConfirmation(this, 'Delete Set?','Are you sure you want to delete this set? This action cannot be reversed.');" OnClick="DeleteSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-trash-alt icon-zoom"" data-toggle="tooltip" data-placement="top" title="Delete Set"></i></asp:LinkButton>
                                                 </div>
                                                 <h3 class="card-title text-center">
                                                     <asp:Label ID="lblSetName" runat="server" Text='<%# Eval("setName") %>' /></h3>
@@ -61,7 +61,10 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="editSetLabel">Edit Set</h2>
+                        <h2 class="modal-title" id="editSetLabel">
+                            <i class="fas fa-edit text-warning"></i>
+                            Edit Set
+                        </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -71,24 +74,27 @@
                         </div>
                         <div class="mb-3">
                             <label for="editDescTxt" class="form-label">Description</label>
-                            <asp:TextBox runat="server" class="form-control" id="editDescTxt" TextMode="MultiLine" Rows="3" ClientIDMode="Static"></asp:TextBox>
+                            <asp:TextBox runat="server" class="form-control" id="editDescTxt" maxlength="150" TextMode="MultiLine" Rows="3" ClientIDMode="Static"></asp:TextBox>
                         </div>
+                        <asp:HiddenField ID="hdnfldSetId" runat="server" ClientIDMode="Static" />  
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-dark">Save</button>
+                        <asp:LinkButton ID="editSaveButton" OnClick="SaveEditSetBtn_Click" runat="server" class="btn btn-warning" Text="Save"></asp:LinkButton>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
-
         <!-- Add Set Modal -->
         <div class="modal fade" id="addSetModal" tabindex="-1" aria-labelledby="editSetsModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="addSetLabel">Add New Set</h2>
+                        <h2 class="modal-title" id="addSetLabel">
+                            <i class="fas fa-folder-plus text-secondary"></i>
+                            Add New Set
+                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -98,7 +104,7 @@
                         </div>
                         <div class="mb-3">
                             <label runat="server" id="lblNewDesc" for="descTxt" class="form-label">Description</label>
-                            <asp:TextBox runat="server" TextMode="MultiLine" class="form-control" ID="newDescText" Rows="3" placeholder="Type your set description here."></asp:TextBox>
+                            <asp:TextBox runat="server" TextMode="MultiLine" class="form-control" ID="newDescText" maxlength="150" Rows="3" placeholder="Type your set description here."></asp:TextBox>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -110,14 +116,49 @@
         </div>
     </div>
 
+    <!-- Delete Set Modal -->
+        <div class="modal fade" id="deleteSetsModal" tabindex="-1" aria-labelledby="deleteSetsModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">
+                            <i class="fas fa-trash-alt text-danger"></i>&nbsp;
+                            <span id="deleteSetTitle"></span>
+                        </h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="deleteMsg"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnConfirm" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <script>
         $(function () {
-            showModal = function (setName, setDesc) {
+            showModal = function (setName, setDesc, setId) {
                 $("#editSetNameTxt").val(setName);
                 $("#editDescTxt").text(setDesc);
+                $("#hdnfldSetId").val(setId);
                 $("#editSetsModal").modal("show");
             }
         });
+
+        function getConfirmation(sender, title, message) {
+            if (confirm('Are you sure you want to delete this set?'))
+                return true;
+            else
+                return false;
+            //$("#deleteSetTitle").text(title);
+            //$("#deleteMsg").text(message);
+            //$('#deleteSetsModal').modal('show');
+            //$('#btnConfirm').attr('onclick', "$('#deleteSetsModal').modal('hide');setTimeout(function(){" + $(sender).prop('href') + "}, 50);");
+            //return false;
+        }
     </script>
  
 </asp:Content>

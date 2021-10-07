@@ -314,6 +314,7 @@ button {
 .add-new-set {
     border: 2px dashed #000;
     text-align: center;
+    min-height: 210px;
 }
 
 div:hover > .card-btn {
@@ -802,4 +803,8 @@ body {
 
 .sidebar {
     font-size: 18px;
+}
+
+text-shadow {
+    text-shadow: 1px 1px #000;
 }

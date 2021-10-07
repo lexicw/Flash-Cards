@@ -51,6 +51,24 @@ namespace Flash_Cards
         protected global::System.Web.UI.WebControls.TextBox editDescTxt;
 
         /// <summary>
+        /// hdnfldSetId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnfldSetId;
+
+        /// <summary>
+        /// editSaveButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton editSaveButton;
+
+        /// <summary>
         /// lblNewSetName control.
         /// </summary>
         /// <remarks>

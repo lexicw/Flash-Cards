@@ -50,7 +50,6 @@ namespace Flash_Cards
         {
             string userId = Application["UserId"].ToString();
 
-
             if (String.IsNullOrEmpty(newSetNameTxt.Text) || String.IsNullOrEmpty(newDescText.Text))
             {
             
@@ -74,11 +73,47 @@ namespace Flash_Cards
 
         protected void EditSetBtn_Click(object sender, EventArgs e)
         {
-            string setId = ((LinkButton)sender).CommandArgument.ToString();
             string setName = ((LinkButton)sender).Attributes["SetName"].ToString();
             string setDesc = ((LinkButton)sender).Attributes["SetDesc"].ToString();
+            string setId = ((LinkButton)sender).CommandArgument.ToString();
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Modal", "showModal('" + setName + "', '" + setDesc + "');", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Modal", "showModal('" + setName + "', '" + setDesc + "', '" + setId + "');", true);
+        }
+
+        protected void SaveEditSetBtn_Click(object sender, EventArgs e)
+        {
+            string setId = hdnfldSetId.Value;
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            conn.Open();
+
+            string query = "UPDATE Sets SET setName=@setName, description=@setDesc WHERE setId='" + setId + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            cmd.Parameters.AddWithValue("@setName", editSetNameTxt.Text);
+            cmd.Parameters.AddWithValue("@setDesc", editDescTxt.Text);
+
+            cmd.ExecuteReader();
+            conn.Close();
+
+            Response.Redirect("CardSets.aspx");
+        }
+        protected void DeleteSetBtn_Click(object sender, EventArgs e)
+        {
+            string setId = ((LinkButton)sender).CommandArgument.ToString();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            conn.Open();
+
+            string query = "DELETE Sets WHERE setId='" + setId + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            cmd.ExecuteReader();
+            conn.Close();
+
+            Response.Redirect("CardSets.aspx");
         }
     }
 }
