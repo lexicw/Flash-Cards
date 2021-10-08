@@ -5,8 +5,6 @@
         <h2><%: Title %></h2>
         <section class="container-fluid container-feed">
             <div class="container">
-
-
                 <asp:UpdatePanel class="row" ID="panelSets" runat="server">
                     <ContentTemplate>
                         <asp:Repeater ID="rptSets" runat="server">
@@ -122,7 +120,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="modal-title">
-                            <i class="fas fa-trash-alt text-danger"></i>&nbsp;
+                            <i class="fas fa-exclamation-triangle text-danger"></i>&nbsp;
                             <span id="deleteSetTitle"></span>
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -139,7 +137,7 @@
         </div>
 
     <script>
-        $(function () {
+        $(function () { // Function for setting Edit Sets Modal Fields then showing the modal
             showModal = function (setName, setDesc, setId) {
                 $("#editSetNameTxt").val(setName);
                 $("#editDescTxt").text(setDesc);
@@ -148,16 +146,12 @@
             }
         });
 
-        function getConfirmation(sender, title, message) {
-            if (confirm('Are you sure you want to delete this set?'))
-                return true;
-            else
-                return false;
-            //$("#deleteSetTitle").text(title);
-            //$("#deleteMsg").text(message);
-            //$('#deleteSetsModal').modal('show');
-            //$('#btnConfirm').attr('onclick', "$('#deleteSetsModal').modal('hide');setTimeout(function(){" + $(sender).prop('href') + "}, 50);");
-            //return false;
+        function getConfirmation(sender, title, message) { // Delete Sets Modal Confirmation
+            $("#deleteSetTitle").text(title);
+            $("#deleteMsg").text(message);
+            $('#deleteSetsModal').modal('show');
+            $('#btnConfirm').attr('onclick', "$('#deleteSetsModal').modal('hide');setTimeout(function(){" + $(sender).prop('href') + "}, 10);");
+            return false;
         }
     </script>
  
