@@ -140,7 +140,7 @@
             </button>
             <div class="user-details w-100" type="text">
                 <asp:Label ID="userLabel" runat="server" class="user-image"></asp:Label>
-                 Welcome, <asp:Label ID="lblUsername" runat="server"><%=Application["UserName"].ToString() %></asp:Label>! 
+                 Welcome,&nbsp;<asp:Label ID="lblUsername" runat="server"><%=Application["UserName"].ToString() %></asp:Label>! 
             </div>
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap">
@@ -200,8 +200,13 @@
 
     </form>
     <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        $('[data-bs-toggle="tooltip"]').on('click', function () {
+            $(this).tooltip('hide')
         })
 
         $(function () {

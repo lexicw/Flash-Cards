@@ -14,7 +14,7 @@
         <br />
         <br />
         <br />
-        <h3 style="text-align: center;">Card Set Title</h3>
+        <h3 runat="server" id="setTitle" style="text-align: center;">Card Set Title</h3>
         <%--        <ul class="nav nav-tabs">
           <li class="nav-item">
             <a id="YourCardsLink" class="nav-link active" aria-current="page">Your Cards</a>
@@ -33,15 +33,15 @@
                     <asp:TemplateField>
                         <EditItemTemplate>
                             <div style="width: 90px; text-align: center;">
-                                <asp:LinkButton ID="ButtonSwap" runat="server" OnClick="OnRowSwap" Text="" CssClass="fas fa-exchange-alt card-button-swap" data-toggle="tooltip" data-placement="top" title="Swap Front & Back" />
-                                <asp:LinkButton ID="ButtonUpdate" runat="server" CommandName="Update" Text="" CssClass="fas fa-check-circle card-button-update" data-toggle="tooltip" data-placement="top" title="Update Card" />
-                                <asp:LinkButton ID="ButtonCancel" runat="server" CommandName="Cancel" Text="" CssClass="fas fa-times-circle card-button-cancel" data-toggle="tooltip" data-placement="top" title="Cancel Edit" />
+                                <asp:LinkButton ID="ButtonSwap" runat="server" OnClick="OnRowSwap" Text="" CssClass="fas fa-exchange-alt card-button-swap" data-bs-toggle="tooltip" data-placement="top" title="Swap Front & Back" />
+                                <asp:LinkButton ID="ButtonUpdate" runat="server" CommandName="Update" Text="" CssClass="fas fa-check-circle card-button-update" data-bs-toggle="tooltip" data-placement="top" title="Update Card" />
+                                <asp:LinkButton ID="ButtonCancel" runat="server" CommandName="Cancel" Text="" CssClass="fas fa-times-circle card-button-cancel" data-bs-toggle="tooltip" data-placement="top" title="Cancel Edit" />
                             </div>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <div style="width: 70px; float: right;">
-                                <asp:LinkButton ID="ButtonEdit" runat="server" CommandName="Edit" Text="" CssClass="fas fa-edit card-button-edit" data-toggle="tooltip" data-placement="top" title="Edit Card" />
-                                <asp:LinkButton ID="ButtonDelete" runat="server" CommandName="Delete" Text="" CssClass="fas fa-trash-alt card-delete-button" data-toggle="tooltip" data-placement="top" title="Delete Card" />
+                                <asp:LinkButton ID="ButtonEdit" runat="server" CommandName="Edit" Text="" CssClass="fas fa-edit card-button-edit" data-bs-toggle="tooltip" data-placement="top" title="Edit Card" />
+                                <asp:LinkButton ID="ButtonDelete" runat="server" CommandName="Delete" Text="" CssClass="fas fa-trash-alt card-delete-button" data-bs-toggle="tooltip" data-placement="top" title="Delete Card" />
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -74,8 +74,6 @@
                 </table>
                 <div>
                     <button id="btnAdd" type="button" class="btn btn-secondary btn-sm" style="margin-left: 5px; margin-bottom: 5px;"><i class="fas fa-plus"></i></button>
-                </div>
-                <div class="mt-5">
                     <button id="btnSave" type="button" class="btn btn-dark btn-lg float-end" style="margin-left: 5px; margin-bottom: 5px;">Save Cards</button>
                 </div>
             </div>

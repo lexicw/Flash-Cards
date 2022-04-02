@@ -712,8 +712,8 @@ body {
 }
 
     #cards_wrap .container {
-        padding-top: 90px;
-        padding-bottom: 100px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     #cards_wrap .icon-box i {
@@ -742,15 +742,14 @@ body {
     }
 
     .task-card:hover .inner-box i:before {
-        background: -webkit-linear-gradient(50deg, #2096ff, #05ffa3) !important;
-        background: -o-linear-gradient(50deg, #2096ff, #05ffa3) !important;
-        background: linear-gradient(40deg, #2096ff, #05ffa3) !important;
+        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(192,224,244,1) 100%);
         color: #FFFFFF;
         -webkit-transition: all 0.2s ease-in;
         -moz-transition: all 0.2s ease-in;
         -ms-transition: all 0.2s ease-in;
         -o-transition: all 0.2s ease-in;
         transition: all 0.2s ease-in;
+        text-shadow: 1px 1px #000;
     }
 
 .task-card {

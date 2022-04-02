@@ -4,7 +4,7 @@
     <h2><%: Title %>.</h2>
     
     <div class="task-container p-5">
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <select class="form-select form-select-lg" aria-label=".form-select-lg example">
             <option selected>Select a card set below.</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -13,8 +13,8 @@
         <div id="cards_wrap">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-4">
-                    <div class="task-card">
+                <div class="col-md-4">
+                    <div class="task-card h-100">
                         <div class="icon-box ">
                             <div class="inner-box">
                                 <i class="far fa-clone"></i>
@@ -24,8 +24,8 @@
                         <p>Text here.</p>    
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="task-card">
+                <div class="col-md-4">
+                    <div class="task-card h-100">
                         <div class="icon-box ">
                             <div class="inner-box">
                                 <i class="fas fa-paperclip"></i>
@@ -35,9 +35,8 @@
                         <p id="direction">Text here.</p>
                     </div>
                 </div>
-                <div class="clearfix hidden-md hidden-lg"></div>
-                <div class="col-lg-4">
-                    <div class="task-card">
+                <div class="col-md-4">
+                    <div class="task-card h-100">
                         <div class="icon-box ">
                             <div class="inner-box">
                                 <i class="fas fa-ruler"></i>

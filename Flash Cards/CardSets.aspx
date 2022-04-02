@@ -15,9 +15,9 @@
                                         <div class="card-front">
                                             <div class="card-excerpt">
                                                 <div style="float: right;">
-                                                    <asp:LinkButton ClientIDMode="AutoID" CommandArgument='<%#Eval("setId")%>' SetName='<%#Eval("setName")%>' SetDesc='<%#Eval("description")%>' ID="EditButton" runat="server" OnClick="EditSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-edit icon-zoom" title="Edit Set"></i></asp:LinkButton>
+                                                    <asp:LinkButton ClientIDMode="AutoID" CommandArgument='<%#Eval("setId")%>' SetName='<%#Eval("setName")%>' SetDesc='<%#Eval("description")%>' ID="EditButton" runat="server" OnClick="EditSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-edit icon-zoom" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Set"></i></asp:LinkButton>
 
-                                                    <asp:LinkButton ID="deleteSetBtn" runat="server" CommandArgument='<%#Eval("setId")%>' OnClientClick="return getConfirmation(this, 'Delete Set?','Are you sure you want to delete this set? This action cannot be reversed.');" OnClick="DeleteSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-trash-alt icon-zoom"" data-toggle="tooltip" data-placement="top" title="Delete Set"></i></asp:LinkButton>
+                                                    <asp:LinkButton ID="deleteSetBtn" runat="server" CommandArgument='<%#Eval("setId")%>' OnClientClick="return getConfirmation(this, 'Delete Set?','Are you sure you want to delete this set? This action cannot be reversed.');" OnClick="DeleteSetBtn_Click" CssClass="icon-buttons"><i class="fas fa-trash-alt icon-zoom" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Set"></i></asp:LinkButton>
                                                 </div>
                                                 <h3 class="card-title text-center">
                                                     <asp:Label ID="lblSetName" runat="server" Text='<%# Eval("setName") %>' /></h3>
@@ -25,7 +25,7 @@
                                             </div>
                                             <div class="card-cta">
                                                 <p>
-                                                    <asp:LinkButton ID="btnGoToCards" OnClick="ButtonGoToCards_Click" runat="server" CommandArgument='<%#Eval("setId")%>' type="button" class="btn fc-button btn-light">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></asp:LinkButton>
+                                                    <asp:LinkButton ID="btnGoToCards" OnClick="ButtonGoToCards_Click" runat="server" CommandArgument='<%#Eval("setId")%>' SetName='<%#Eval("setName")%>' type="button" class="btn fc-button btn-light">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></asp:LinkButton>
                                                 </p>
                                             </div>
                                         </div>

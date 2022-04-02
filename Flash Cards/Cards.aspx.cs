@@ -15,6 +15,9 @@ namespace Flash_Cards
         protected void Page_Load(object sender, EventArgs e)
         {
             string setID = Request.QueryString["setid"];
+            string setName = Request.QueryString["setname"];
+
+            setTitle.InnerText = setName;
 
             if (!this.IsPostBack)
             {
@@ -25,6 +28,8 @@ namespace Flash_Cards
 
         public void BindCards(string setID)
         {
+            if (setID != null)
+            { 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
             string query = "SELECT cardId, front, back FROM Cards WHERE setId =" + setID;
@@ -42,7 +47,8 @@ namespace Flash_Cards
             }
             conn.Close();
 
-            
+            }
+
         }
 
         protected void OnPaging(object sender, GridViewPageEventArgs e)
