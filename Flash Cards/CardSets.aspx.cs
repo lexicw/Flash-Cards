@@ -115,5 +115,11 @@ namespace Flash_Cards
 
             Response.Redirect("CardSets.aspx");
         }
+
+        protected void ButtonGoToCards_Click(object sender, EventArgs e)
+        {
+            string setID = ((LinkButton)sender).CommandArgument.ToString();
+            Response.Redirect("/Cards.aspx?setid=" + setID);
+        }
     }
 }

@@ -14,18 +14,20 @@ namespace Flash_Cards
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string setID = Request.QueryString["setid"];
+
             if (!this.IsPostBack)
             {
-                this.BindCards();
+                this.BindCards(setID);
             }
 
         }
 
-        public void BindCards()
+        public void BindCards(string setID)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
-            string query = "SELECT cardId, front, back FROM Cards WHERE setId = 3";
+            string query = "SELECT cardId, front, back FROM Cards WHERE setId =" + setID;
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -45,14 +47,16 @@ namespace Flash_Cards
 
         protected void OnPaging(object sender, GridViewPageEventArgs e)
         {
+            string setID = Request.QueryString["setid"];
             cardGridView.PageIndex = e.NewPageIndex;
-            this.BindCards();
+            this.BindCards(setID);
         }
 
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
             cardGridView.EditIndex = e.NewEditIndex;
-            this.BindCards();
+            string setID = Request.QueryString["setid"];
+            this.BindCards(setID);
         }
 
         protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -75,13 +79,15 @@ namespace Flash_Cards
                 }
             }
             cardGridView.EditIndex = -1;
-            this.BindCards();
+            string setID = Request.QueryString["setid"];
+            this.BindCards(setID);
         }
 
         protected void OnRowCancelingEdit(object sender, EventArgs e)
         {
+            string setID = Request.QueryString["setid"];
             cardGridView.EditIndex = -1;
-            this.BindCards();
+            this.BindCards(setID);
         }
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {

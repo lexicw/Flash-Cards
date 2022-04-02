@@ -11,7 +11,7 @@
                             <ItemTemplate>
 
                                 <div class="col-xs-12 col-md-4 col-card">
-                                    <div class="card card-shadow">
+                                    <div class="card card-shadow rounded">
                                         <div class="card-front">
                                             <div class="card-excerpt">
                                                 <div style="float: right;">
@@ -25,7 +25,7 @@
                                             </div>
                                             <div class="card-cta">
                                                 <p>
-                                                    <a href="/Cards.aspx" type="button" class="btn fc-button btn-light">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                    <asp:LinkButton ID="btnGoToCards" OnClick="ButtonGoToCards_Click" runat="server" CommandArgument='<%#Eval("setId")%>' type="button" class="btn fc-button btn-light">Go To Cards &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></asp:LinkButton>
                                                 </p>
                                             </div>
                                         </div>
@@ -129,7 +129,7 @@
                         <span id="deleteMsg"></span>
                     </div>
                     <div class="modal-footer">
-                        <button id="btnConfirm" class="btn btn-danger">Delete</button>
+                        <a id="btnConfirm" class="btn btn-danger">Delete</a>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
         </div>
 
     <script>
-        $(function () { // Function for setting Edit Sets Modal Fields then showing the modal
+        $(function () { // Function for setting Edit Sets Modal fields then showing the modal
             showModal = function (setName, setDesc, setId) {
                 $("#editSetNameTxt").val(setName);
                 $("#editDescTxt").text(setDesc);

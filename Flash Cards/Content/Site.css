@@ -619,6 +619,7 @@ div:hover > .card-btn {
 .nav-pills .nav-link.active {
     background-color: #000;
     color: #FFF !important;
+    border-radius: 0px;
 }
 
 .search-bar {
